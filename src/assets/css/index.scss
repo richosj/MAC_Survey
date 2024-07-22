@@ -2,25 +2,84 @@
 @import 'utils/var';
 @import 'utils/function';
 @import 'reset.css';
-html{
-    width: 100%;
-    height: 100%;
+
+.container {
+    max-width: 124rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: 0 auto;
 }
-body{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+header{
+    background-color: #004b93;
+    height: 13.5rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    .container{
+        max-width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
-.frame{
-    background-color: #f8f8f8;
-    width:128rem;
-    height: 82rem;
-    padding: 2.5rem 3.5rem;
+
+.visual{
+    background-color: #66a7df;
+    &__img{
+        background: url("../img/visual.png") no-repeat 50% 50%;
+        background-size: cover;
+        height: 80rem;
+        max-width: 192rem;
+        margin: 0 auto;
+    }
 }
-.wrap{
-    position: relative;
-    width: 100%;
-    height: 100%;
+nav{
+    background-color: #f3f0ee;
+    .container{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 3rem 0;
+        button{
+            color: #278fcf;
+            transition: all 0.5s;
+            will-change: auto;
+            &.is-active{
+                color: #033b88;
+                font-weight: 700;
+            }
+            &:nth-child(2){
+                border-left: 1px solid #c0d8e6;
+                border-right: 1px solid #c0d8e6;
+            }
+        }
+    }
+}
+
+.page1{
+    padding-top: 22rem;
+    &__title{
+        text-align: center;
+        padding-bottom: 8rem;
+    }
+    &__video{
+        padding-bottom: 56.25%;
+        position: relative;
+        iframe{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+footer{
+    background-color: #004e9d;
+    padding: 6.5rem 0;
+    @include responsive(768){
+        display: none;
+    }
 }

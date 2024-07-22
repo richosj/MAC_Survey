@@ -8,7 +8,7 @@
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-<title>올포랜드</title>
+<title>제목</title>
 <meta name="title" content="" /> 
 <meta name="author" content="" />
 <meta name="keywords" content="" />
@@ -25,9 +25,82 @@
 <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
-<div id="frame" class="frame">
-    <div class="wrap">
-        <div class="logo"><img src="./assets/img/logo.png" alt=""></div>
-    </div>
+<div id="wrap" class="wrap">
+    <header>
+        <div class="container">
+            <h1><a href="/"><img src="./assets/img/logo-01.png" alt=""></a></h1>
+
+            <div><a href="/"><img src="./assets/img/logo-02.png" alt=""></a></div>
+        </div>
+    </header>
+
+    <main id="main">
+        <div class="visual">
+            <div class="visual__img"></div>
+        </div>
+        <nav>
+            <div class="container">
+                <button type="button" class="tab">수막구균은 무엇인가요?</button>
+                <button type="button" class="tab">
+                    수막구균 백신,<br>
+                    벡세로 X 멘비오
+                </button>
+                <button type="button" class="tab">접종 방법과 FAQ</button>
+            </div>
+        </nav>
+
+        <div class="wraps">
+            <section class="section page1">
+                <div class="container">
+                    <div class="page1__title"><img src="./assets/img/page1_title.png" alt=""></div>
+
+                    <div class="page1__video">
+                        <iframe src="https://www.youtube.com/embed/ladsU5af7Ys?autoplay=1" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </section>
+            <section class="section page2">
+    
+            </section>
+            <section class="section page3">
+    
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab');
+            const sections = document.querySelectorAll('.section');
+
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('click', function() {
+                    tabs.forEach(tab => tab.classList.remove('is-active'));
+                    this.classList.add('is-active');
+                    
+                    sections.forEach((section, secIndex) => {
+                        if (secIndex === index) {
+                            gsap.to(section, {duration: 0.5, opacity: 1, display: 'block', onStart: () => section.classList.add('active')});
+                        } else {
+                            gsap.to(section, {duration: 0.5, opacity: 0, display: 'none', onComplete: () => section.classList.remove('active')});
+                        }
+                    });
+                });
+            });
+            // 초기 상태 설정
+            tabs[0].classList.add('is-active');
+            sections[0].classList.add('active');
+            gsap.set(sections[0], {opacity: 1, display: 'block'});
+        });
+    </script>
+
 </div>
 </body></html>
