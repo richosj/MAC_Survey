@@ -109,6 +109,7 @@ nav{
         font-size: 6.5rem;
         padding-top: 4rem;
         padding-bottom: 3rem;
+        margin-bottom: 7rem;
         em{
             font-style: normal;
             color: #f6ac19;
@@ -130,6 +131,9 @@ nav{
         }
         &::before{
             bottom: 0;
+            width: 10rem;
+            height: .1rem;
+            background-color: #004e9d;
         }
     }
 }
@@ -157,8 +161,12 @@ nav{
 .page1_s1{
     .item{
         display: flex;
+        +.item{
+            margin-top: 6.5rem;
+        }
         dl{
             display: flex;
+            align-items: center;
             gap: 0 6.5rem;
             dt{}
             dd{
@@ -167,6 +175,16 @@ nav{
                     font-size: 4.5rem;
                     border-bottom: 1px solid #bdbebe;
                     padding-bottom: 2rem;
+                }
+                .desc{
+                    padding-top: 1rem;
+                    p{
+                        line-height: 1.6;
+                        font-size: 2.8rem;
+                        sup{
+                            font-size: 1.6rem;
+                        }
+                    }
                 }
             }
         }
