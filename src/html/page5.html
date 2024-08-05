@@ -43,13 +43,33 @@
                 </div>
                 <div class="desc">누적 참여자 수 </div>
             </div>
-
-            
         </div>
+
+        <div class="foot-common">
+            <a href="#" class="push_like"></a>
+            <a href="#" class="push_ivi"></a>
+        </div>
+        
     </div>
-    <div class="foot-common">
-        <!-- <a href="#" class="push_like"></a> -->
-        <a href="#" class="push_ivi"></a>
-    </div>
+    
 </div>
+<script>
+    const targetNumber = 154185; 
+        const duration = 1500;
+        const interval = 20;
+        let currentNumber = 0; 
+
+        
+        const step = targetNumber / (duration / interval);
+
+        function updateCounter() {
+            currentNumber += step;
+            if (currentNumber >= targetNumber) {
+                currentNumber = targetNumber;
+                clearInterval(counterInterval);
+            }
+            document.querySelector('.count').textContent = Math.floor(currentNumber).toLocaleString('en-US');
+        }
+        const counterInterval = setInterval(updateCounter, interval);
+</script>
 </body></html>

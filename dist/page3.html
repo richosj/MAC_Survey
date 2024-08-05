@@ -56,12 +56,15 @@
                 </div>
             </div>
         </div>
+
+        <div class="foot-common">
+            <a href="#" class="push_like"></a>
+            <a href="#" class="push_ivi"></a>
+        </div>
+        
     </div>
 
-    <div class="foot-common">
-        <a href="#" class="push_like"></a>
-        <a href="#" class="push_ivi"></a>
-    </div>
+    
 </div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -89,9 +92,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         touchElement.addEventListener('touchend', function(e) {
             if (!hasSwiped && endX > startX) { // 아직 스와이프 이벤트가 발생하지 않았고, 좌에서 우로 스와이프 했을 때만 처리
-                document.querySelector('.siso').classList.add('active');
-                document.querySelector('.touchElement').classList.add('in');
                 el.style.transform = `translateX(calc(40rem - ${el.offsetWidth}px))`;
+                document.querySelector('.siso').classList.add('active');
+                document.querySelector('.is-touch').classList.add('in');
                 hasSwiped = true; // 스와이프가 발생했음을 기록
             }
             // 초기화

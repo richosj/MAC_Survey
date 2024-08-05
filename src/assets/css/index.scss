@@ -10,6 +10,19 @@ $font-input-color : #333;
 $font-placeholder-color : #333;
 $font-disabled-color : #999;
 
+.intro{
+    width: 100%;
+    height: 100%;
+    @media screen and (orientation: portrait) {
+        background: url(../img/intro.png) no-repeat 50% 50%;
+        background-size: cover;
+    }
+    @media screen and (orientation: landscape) {
+        background:#0007a2 url(../img/intro.png) no-repeat 50% 50%;
+        background-size: auto 100%;
+    }
+}
+
 .form-flexs{display:flex;position:relative;}
 
 .select, .input, .textarea{display:inline-block;height:4rem;border:0.1rem solid $border-color;background-color:#fff;padding:0.5rem 1rem 0.6rem;font-size:1.8rem;font-weight:700;color:$font-input-color;
@@ -94,8 +107,22 @@ body{width: 100%;height: 100%;display: flex;justify-content: center;align-items:
     &.index-step1 {background:#fff;}
     // &.index-step3 {background:#FFF url(../img/bg-blue-full-1@2x.png) no-repeat 0 bottom/100% auto;}
     // &.index-step4 {background:#FFF url(../img/bg-blue-full-2@2x.png) no-repeat 50% bottom/cover;}
-    &.index-step6{background: #0007a2;}
-    &.index-step7{background: #0007a2;}
+    @include responsive(xl){
+        &.index-step5{
+            background:#0007a2 url(../img/bg-page05.png) no-repeat 0 bottom / cover;
+        }
+        &.index-step6{
+            background:#0007a2 url(../img/bg-page06.png) no-repeat 0 bottom / cover;
+        }
+        &.index-step7{
+            background:#0007a2 url(../img/bg-page07.png) no-repeat 0 bottom / cover;
+        }
+    }
+    @include responsive2(xl){
+        &.index-step6,
+        &.index-step7{background: #0007a2;}
+    }
+    
 }
 picture {max-width:100%;
     img {max-width:100%;height:auto;}
@@ -110,8 +137,13 @@ picture {max-width:100%;
 .contents-container {display:flex;height: 100%;justify-content: center;align-items: center;}
 
 .frame {
+    overflow: hidden;
     width:118rem;height:82rem;
+    padding: 5.1219vh 4.745vw;
     position: relative;
+    @include responsive2(lg2){
+        padding: 4.2rem 5.4rem;
+    }
     
 }
 .foot-common{
@@ -127,23 +159,30 @@ picture {max-width:100%;
     .push_like{background: url(../img/icon_like@blue.png);
         &.white{background-image: url(../img/icon_like@white.png);}
     }
-    .push_ivi{background: url(../img/icon_ivi@blue.png);width: 3.4rem;margin-left: 2.4rem;
+    .push_ivi{background: url(../img/icon_ivi@blue.png);width: 3.4rem;margin-left: 2.2rem;
         &.white{background-image: url(../img/icon_ivi@white.png);}
+    }
+    &:has(.white){
+        .push_ivi{
+            margin-left: 1.4rem;
+        }
     }
 }
 
 
-.wrap{position: relative;width: 100%;height: 100%;
-    .index-step1 & {background:#0007a2;}
+.wrap{position: relative;width: 100%;height: 100%;    
     .index-step2 & {}
-    
-    .index-step1 & {background:transparent url(../img/bg-page01.png) no-repeat 0 bottom/cover;}
+    .index-step1 & {background:transparent url(../img/bg-page01.png) no-repeat 50% 50%/cover;}
     .index-step2 & {background:transparent url(../img/bg-page02.png) no-repeat 0 bottom/cover;}
     .index-step3 & {background:transparent url(../img/bg-page03.png) no-repeat 0 bottom/cover;}
     .index-step4 & {background:transparent url(../img/bg-page03.png) no-repeat 0 bottom/cover;}
-    .index-step5 & {background:transparent url(../img/bg-page05.png) no-repeat 0 bottom/cover;}
-    .index-step6 & {background:transparent url(../img/bg-page06.png) no-repeat 50% 50%;}
-    .index-step7 & {background:transparent url(../img/bg-page06.png) no-repeat 50% 50%;}
+    @include responsive2(xl){
+        .index-step5 & {background:transparent url(../img/bg-page05.png) no-repeat 0 bottom/cover;}
+        .index-step6 & {background:transparent url(../img/bg-page06.png) no-repeat 50% 50%;}
+        .index-step7 & {background:transparent url(../img/bg-page06.png) no-repeat 50% 50%;}
+    }
+    
+    
 }
 
 
@@ -169,6 +208,7 @@ picture {max-width:100%;
         left: 0;
         top: 0;
     }
+    
 }
 
 
@@ -193,7 +233,7 @@ picture {max-width:100%;
     .logo1{
         position: absolute;
         right: 0;
-        top: 4rem;
+        top: 0;
     }
 
 }
@@ -202,7 +242,7 @@ picture {max-width:100%;
     .logo1{
         position: absolute;
         right: 0;
-        top: 4rem;
+        top: 0;
     }
 
 }
@@ -211,8 +251,8 @@ picture {max-width:100%;
 
 .wrap-login {color:#fff;
     fieldset {display:flex;flex-direction: column;
-        &>div {display:flex;font-size:1.8rem;align-items: center;flex-wrap:wrap; justify-content: center;
-
+        &>div {display:flex;font-size:1.8rem;flex-wrap:wrap; justify-content: center;
+            border-bottom:0.1rem solid rgba(255,255,255,0.3);
             &+div {
                 margin-top: 3.3rem;
             }
@@ -220,8 +260,7 @@ picture {max-width:100%;
         label {display:flex;text-align:center;
             align-items: center;
             width: 12rem;
-            border-bottom:0.1rem solid rgba(255,255,255,0.3);
-            height: 4.3rem;
+            height: 4.2rem;
             .icon{
                 width: 4rem;
                 background-size: auto auto;
@@ -229,7 +268,7 @@ picture {max-width:100%;
             }
             span {display:inline-block;margin-left:0.8rem;}
         }
-        .input {width: 29.5rem;border: 0;background: transparent url("../img/input_bg.png") no-repeat 0 0;height: 4.3rem;}
+        .input {width: 29.5rem;border: 0;background: transparent url("../img/input-line.png") no-repeat 0 0;height: 4.2rem;vertical-align: top;}
     }
     .direct-bottom {padding:5rem 0 2.5rem;text-align:center;
         button {display:block;position:relative;width:100%;height:4.8rem;margin:0 auto;background:#fff;color:#2e30f2;border-radius:2.4rem;font-size:2rem;font-weight:300;
@@ -250,8 +289,8 @@ picture {max-width:100%;
     }
     .logo2{
         position: absolute;
-        right: 0;
-        top: 0;
+        right: 4rem;
+        top: 3rem;
     }
 }
 
@@ -305,6 +344,7 @@ picture {max-width:100%;
 }
 
 .wrap-approve{
+    padding-top: 7rem;
     .round{
         width: 57rem;height: 57rem;
         object-fit: 1;
@@ -387,8 +427,11 @@ picture {max-width:100%;
         }
     }
     .count{
+        display: inline-block;
+        width: 37.9rem;
         font-size: 12.4rem;
         font-weight: 200;
+        text-align: right;
     }
     .desc{
         text-align: right;
@@ -428,9 +471,10 @@ picture {max-width:100%;
     }
 }
 .wrap-end{
-    padding: 12rem 0 0 12rem;
+    padding: 7rem 0 0 5rem;
     height: 100%;
     position: relative;
+    //overflow: hidden;
 }
 .end-1{}
 .end-2{
@@ -456,16 +500,17 @@ picture {max-width:100%;
     margin: 0 auto;
     width: 75rem;
     padding-top: 11rem;
+    text-align: center;
 }
 .end-5{
     position: absolute;
-    bottom: 5.5rem;
-    left: 25.5rem;
+    bottom: 1rem;
+    left: 19rem;
     color: #fff;
     font-family: 'SUIT';
     font-size: .5rem;
 }
-.end-back{position: absolute;right: 0;top: 19rem;}
+.end-back{position: absolute;right: -9rem;top: 19rem;}
 
 .lever{
     display: flex;
