@@ -36,4 +36,8 @@
     background-repeat: $repeat;
     background-image: url(#{$image-url});
   }
-  
+
+$context-ratio: 16;
+@function rem($pixels) {
+@return calc($pixels / $context-ratio) * 1rem;
+}
