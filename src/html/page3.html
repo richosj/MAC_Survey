@@ -38,7 +38,14 @@
         <div class="contents-container">
             <div class="wrap-touch">
                 <div class="siso">
-                    
+                    <div class="items">
+                        <div class="movings">
+                            <div class="move_i"><img src="./assets/img/tem1.png" alt=""></div>
+                            <div class="fixe_i"><img src="./assets/img/tem2.png" alt=""></div>
+                        </div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="lever"><img src="./assets/img/lever.png" alt=""></div>
                 </div>
                 <div class="touch">
                     <div class="is-touch"><img src="./assets/img/touch.png" alt=""></div>
@@ -56,4 +63,43 @@
         <a href="#" class="push_ivi"></a>
     </div>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+    // width setting;
+    const el = document.querySelector('.move_i');
+    const touchElement = document.querySelector('.is-touch');
+    
+    if (touchElement) {
+        let startX = 0;
+        let endX = 0;
+        let hasSwiped = false; // 스와이프 이벤트가 이미 발생했는지 여부
+
+        touchElement.addEventListener('touchstart', function(e) {
+            if (!hasSwiped) { // 아직 스와이프 이벤트가 발생하지 않았을 때만 처리
+                startX = e.touches[0].clientX;
+            }
+        });
+
+        touchElement.addEventListener('touchmove', function(e) {
+            if (!hasSwiped) { // 아직 스와이프 이벤트가 발생하지 않았을 때만 처리
+                endX = e.touches[0].clientX;
+            }
+        });
+
+        touchElement.addEventListener('touchend', function(e) {
+            if (!hasSwiped && endX > startX) { // 아직 스와이프 이벤트가 발생하지 않았고, 좌에서 우로 스와이프 했을 때만 처리
+                document.querySelector('.siso').classList.add('active');
+                document.querySelector('.touchElement').classList.add('in');
+                el.style.transform = `translateX(calc(40rem - ${el.offsetWidth}px))`;
+                hasSwiped = true; // 스와이프가 발생했음을 기록
+            }
+            // 초기화
+            startX = 0;
+            endX = 0;
+        });
+    }
+});
+
+</script>
 </body></html>
