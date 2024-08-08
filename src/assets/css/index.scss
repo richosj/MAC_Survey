@@ -81,6 +81,8 @@ input[type=number] {-moz-appearance:textfield;}
 		    &:before{width:1.8rem;height:1.9rem;background:url(../img/ico-table1-check-yellow.png) no-repeat 0 0/100% auto;z-index:9;}
         }
 	}
+
+    select,
 	input{	
 		&:disabled {
 			+label{
@@ -130,8 +132,11 @@ picture {max-width:100%;
 
 .icon {display:inline-block;vertical-align: middle;
     &.icon-team {width:2rem;height:2rem;background:url(../img/icon_team.png) no-repeat 50% 50%/100% auto;}
+    &.icon-hospital {width:2.3rem;height:2.3rem;background:url(../img/icon_hospital.png) no-repeat 50% 50%/100% auto;}
+    &.icon-doc {width:2.3rem;height:2.3rem;background:url(../img/icon_doc.png) no-repeat 50% 50%/100% auto;}
     &.icon-manger {width:2rem;height:2rem;background:url(../img/icon_manager.png) no-repeat 50% 50%/100% auto;}
     &.icon-arrow {width:2rem;height:2rem;background:url(../img/ico_arrow-right@2x.png) no-repeat 0 0/100% auto;}
+    &.icon-check {width:3.4rem;height:3rem;background:url(../img/icon_check-right.png) no-repeat 0 0/100% auto;}
 }
 
 .contents-container {display:flex;height: 100%;justify-content: center;align-items: center;}
@@ -268,7 +273,13 @@ picture {max-width:100%;
             }
             span {display:inline-block;margin-left:0.8rem;}
         }
-        .input {width: 29.5rem;border: 0;background: transparent url("../img/input-line.png") no-repeat 0 0;height: 4.2rem;vertical-align: top;}
+        .select {width: 29.5rem;border: 0;background: transparent url("../img/input-line.png") no-repeat 0 0;height: 4.2rem;vertical-align: top;color: #fff;
+            appearance: none;
+        }
+        .input {width: 29.5rem;border: 0;background: #fff;height: 4.2rem;vertical-align: top;color: #0000c5;
+            color: #0000c5;
+            appearance: none;
+        }
     }
     .direct-bottom {padding:5rem 0 2.5rem;text-align:center;
         button {display:block;position:relative;width:100%;height:4.8rem;margin:0 auto;background:#fff;color:#2e30f2;border-radius:2.4rem;font-size:2rem;font-weight:300;
@@ -447,6 +458,16 @@ picture {max-width:100%;
 }
 .certi-img{
     margin-top: 8rem;
+    position: relative;
+}
+.sign-wraps{
+    position: absolute;
+    bottom:5rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    gap: 0 2.5rem;
+    justify-content: center;
 }
 .certi-button{
     display: flex;
@@ -551,4 +572,17 @@ picture {max-width:100%;
     width: 100%;
     height: 100%;
     height: 2.2rem;
+}
+
+/*  */
+.wrap{
+    display: none;
+}
+
+@for $i from 1 through 7{
+    .index-step#{$i}{
+        #s#{$i}{
+            display: block;
+        }
+    }
 }

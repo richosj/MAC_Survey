@@ -26,7 +26,7 @@
 </head>
 <body class="index-step1">
 <div id="frame" class="frame">
-    <div class="wrap">
+    <div class="wrap" id="s1">
         <div class="logo1">
             <picture class="item-img">
                 <source srcset="./assets/img/page1-logo.png" media="(max-width: 1080px)"> 
@@ -48,30 +48,324 @@
                         <legend>login</legend>
                         <div>
                             <label for="team"><i class="icon icon-team"></i> <span>팀 선택</span></label>
-                            <input type="text" id="team" name="team" class="input">
+                            <select type="text" id="team" name="team" class="select">
+                                <option value="">팀</option>
+                            </select>
                         </div>
                         <div>
                             <label for="manger"><i class="icon icon-manger"></i> <span>담당자명</span></label>
-                            <input type="text" id="manger" name="manger" class="input">
+                            <input type="text" id="manger" name="manger" class="select">
                         </div>
                     </fieldset>
                     <div class="direct-bottom">
-                        <button type="button" onclick="location.href='./page2.html'">LOG IN <i class="icon icon-arrow"></i></button>
+                        <button type="button" data-toggle="frame02">LOG IN <i class="icon icon-arrow"></i></button>
                     </div>
-                    
+                </form>
+                <form>
+                    <fieldset>
+                        <legend>login</legend>
+                        <div>
+                            <label for="hospital"><i class="icon icon-hospital"></i> <span>병원명</span></label>
+                            <input type="text" id="hospital" name="hospital" class="input">
+                        </div>
+                        <div>
+                            <label for="docName"><i class="icon icon-doc"></i> <span>의료진명</span></label>
+                            <input type="text" id="docName" name="docName" class="input"s>
+                        </div>
+                    </fieldset>
+                    <div class="direct-bottom">
+                        <button type="button" data-toggle="frame02">CHECK <i class="icon icon-check"></i></button>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
+    <!-- 스텝1 -->
+    <div class="wrap" id="s2">
+        <div class="logo1">
+            <picture class="item-img">
+                <source srcset="./assets/img/page2-logo1.png" media="(max-width: 1080px)"> 
+                <source srcset="./assets/img/page2-logo1.png"> 
+                <img src="./assets/img/page2-logo1.png">
+            </picture>    
+        </div>
+        
+        <div class="contents-container">
+            <div class="wrap-page2">
+                <div class="img"><img src="./assets/img/page2_img.png" alt=""></div>
+                <div class="logo2"><img src="./assets/img/page2-logo2.png" alt=""></div>
+            </div>
+        </div>
+
+        <div class="foot-common">
+            <a href="#" class="push_like" data-toggle="frame03"></a>
+            <a href="#" class="push_ivi"></a>
+        </div>
+    </div>
+    <!-- 스텝2 -->
+    <div class="wrap" id="s3">
+        <div class="logo1">
+            <picture class="item-img">
+                <source srcset="./assets/img/page1-logo.png" media="(max-width: 1080px)"> 
+                <source srcset="./assets/img/page1-logo.png"> 
+                <img src="./assets/img/page1-logo.png">
+            </picture>    
+        </div>
+        
+        <div class="contents-container">
+            <div class="wrap-touch">
+                <div class="siso">
+                    <div class="items">
+                        <div class="movings">
+                            <div class="move_i"><img src="./assets/img/tem1.png" alt=""></div>
+                            <div class="fixe_i"><img src="./assets/img/tem2.png" alt=""></div>
+                        </div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="lever"><img src="./assets/img/lever.png" alt=""></div>
+                </div>
+                <div class="touch">
+                    <div class="is-touch"><img src="./assets/img/touch.png" alt=""></div>
+                </div>
+                <div class="txtgroup">
+                    <p class="txt1">제오민(보툴리눔 톡신)에는 적을수록 백신에는 많을수록 유익한 <b>중화항체.</b></p>
+                    <p class="txt2"><b>중화항체를 백신으로 욺겨주세요.</b></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="foot-common">
+            <a href="#" class="push_like" data-toggle="frame04"></a>
+            <a href="#" class="push_ivi"></a>
+        </div>
+    </div>
+    <!-- 스텝3 -->
+    <div class="wrap" id="s4">
+        <div class="logo1">
+            <picture class="item-img">
+                <source srcset="./assets/img/page1-logo.png" media="(max-width: 1080px)"> 
+                <source srcset="./assets/img/page1-logo.png"> 
+                <img src="./assets/img/page1-logo.png">
+            </picture>    
+        </div>
+
+        <div class="contents-container">
+            <div class="wrap-approve">
+                <div class="round">
+                    <div class="group">
+                        <div class="txtgroup">
+                            <p>저개발 국가의 감염병 예방을 위한 제오민의 IVI 기부</p>
+                            <p>선생님의 참여로 완성됩니다.</p>
+                        </div>
+                        <div class="name">
+                            <img src="./assets/img/name.png" alt="">
+                        </div>
+                        <div class="btngroup">
+                            <button type="button" class="btn-reset">초기화</button>
+                            <button type="button" class="btn-save">저장하기</button>
+                        </div>
+                    </div>
+
+                    <div class="bottle"><img src="./assets/img/page4-img.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <div class="foot-common">
+            <a href="#" class="push_like" data-toggle="frame05"></a>
+            <a href="#" class="push_ivi"></a>
+        </div>
+    </div>
+    <!-- 스텝4 -->
+    <div class="wrap" id="s5">
+        <div class="logo1">
+            <picture class="item-img">
+                <source srcset="./assets/img/page1-logo.png" media="(max-width: 1080px)"> 
+                <source srcset="./assets/img/page1-logo.png"> 
+                <img src="./assets/img/page1-logo.png">
+            </picture>    
+        </div>
+
+        <div class="contents-container">
+            <div class="wrap-participants">
+                <div class="count_wrap">
+                    <span class="count">154,185</span>
+                    <em>명</em>
+                </div>
+                <div class="desc">누적 참여자 수 </div>
+            </div>
+        </div>
+
+        <div class="foot-common">
+            <a href="#" class="push_like" data-toggle="frame06"></a>
+            <a href="#" class="push_ivi"></a>
+        </div>
+    </div>
+    <!-- 스텝5 -->
+    <div class="wrap" id="s6">
+        <div class="logo1">
+            <picture class="item-img">
+                <source srcset="./assets/img/page1-logo@white.png" media="(max-width: 1080px)"> 
+                <source srcset="./assets/img/page1-logo@white.png"> 
+                <img src="./assets/img/page1-logo@white.png">
+            </picture>    
+        </div>
+
+        <div class="contents-container">
+            <div class="wrap-certi">
+                <div class="certi-img">
+                    <img src="./assets/img/cert.png" alt="">
+                    <div class="sign-wraps">
+                        <div class="boxing">
+                            <img src="./assets/img/sign-1.png" alt="">
+                        </div>
+                        <div class="boxing">
+                            <img src="./assets/img/sign-2.png" alt="">
+                        </div>
+                        <div class="boxing">
+                            영역03
+                        </div>
+                    </div>
+                </div>
+                <div class="certi-button">
+                    <button type="button">다운로드</button>
+                </div>
+            </div>
+        </div>
+        <div class="foot-common">
+            <a href="#" class="push_like white" data-toggle="frame07"></a>
+            <a href="#" class="push_ivi white"></a>
+        </div>
+    </div>
+    <!-- 스텝6 -->
+    <div class="wrap" id="s7">
+        <div class="logo1">
+            <picture class="item-img">
+                <source srcset="./assets/img/page1-logo@white.png" media="(max-width: 1080px)"> 
+                <source srcset="./assets/img/page1-logo@white.png"> 
+                <img src="./assets/img/page1-logo@white.png">
+            </picture>    
+        </div>
+
+        <div class="contents-container">
+            <div class="wrap-end">
+                <div class="end-1"><img src="./assets/img/page7-logo.png" alt=""></div>
+                <div class="end-2">
+                    UN개발 계획(UNDP)의 주도하에 1997년에 설립되었고, 대한민국에 본부를 둔<br>
+                    최초의 국제기구인 국제백신연구소(IVI)는 세계 공중보건을 위한 안전하고 효과적<br>
+                    이며  저렴한 백신의 발굴, 개발 및 보급을 사명으로 전염병 예방 백신 개발과 접종에<br> 
+                    전념하고 있습니다.<sup>1 </sup>
+                </div>
+                <div class="end-3">
+                    대한민국, 스웨덴, 인도, 핀란드, 중국 등 39개 국가와 세계보건기구(WHO)가 IVI의<br>
+                    설립협정에 가입하고 있습니다.<sup>1</sup>
+                </div>
+
+                <div class="end-4">
+                    <div><img src="./assets/img/group1.png" alt=""></div>
+                    <div><img src="./assets/img/group2.png" alt=""></div>
+                    <div><img src="./assets/img/group3.png" alt=""></div>
+                </div>
+
+                <div class="end-5">References 1.국제백신연구소. IVI 소개. Available at: https://www.ivi.int/ko/who-we-are/ivi-in-brief/ (Accessed on Jun, 2024) 2.국제백신연구소한국후원회. 후원의 의의. Available at: https://www.ivisupport.or.kr/page/donation/donate (Accessed on Jun, 2024)  </div>
+
+                <div class="end-back"><img src="./assets/img/end.png" alt=""></div>
+                
+            </div>
+        </div>
+        <div class="foot-common">
+            <a href="#" class="push_like white" data-toggle="frame01"></a>
+        </div>
+    </div>
+    <!-- 스텝7 -->
 </div>
 
+
 <script>
-    
     document.addEventListener("DOMContentLoaded", function(){
         if (window.matchMedia("(orientation: landscape)").matches) {
         } else {
             location.href = './intro.html'
         }
+
+        const toggleElements = document.querySelectorAll('[data-toggle]');
+        const body = document.body;
+        const classes = {
+            'frame01': 'index-step1',
+            'frame02': 'index-step2',
+            'frame03': 'index-step3',
+            'frame04': 'index-step4',
+            'frame05': 'index-step5',
+            'frame06': 'index-step6',
+            'frame07': 'index-step7'
+        };
+
+
+        toggleElements.forEach(element => {
+            element.addEventListener('click', () => {
+                const frame = element.getAttribute('data-toggle');
+
+                if (classes[frame]) {
+                    // 현재 모든 클래스 제거
+                    body.classList.remove('index-step1', 'index-step2', 'index-step3', 'index-step4' , 'index-step5', 'index-step6' , 'index-step7');
+
+                    // 해당 클래스 추가
+                    body.classList.add(classes[frame]);
+                }
+            });
+        });
+
+        // 터치스와잉프
+        // width setting;
+        const el = document.querySelector('.move_i');
+        const touchElement = document.querySelector('.is-touch');
+        
+        if (touchElement) {
+            let startX = 0;
+            let endX = 0;
+            let hasSwiped = false; // 스와이프 이벤트가 이미 발생했는지 여부
+
+            touchElement.addEventListener('touchstart', function(e) {
+                if (!hasSwiped) { // 아직 스와이프 이벤트가 발생하지 않았을 때만 처리
+                    startX = e.touches[0].clientX;
+                }
+            });
+
+            touchElement.addEventListener('touchmove', function(e) {
+                if (!hasSwiped) { // 아직 스와이프 이벤트가 발생하지 않았을 때만 처리
+                    endX = e.touches[0].clientX;
+                }
+            });
+
+            touchElement.addEventListener('touchend', function(e) {
+                if (!hasSwiped && endX > startX) { // 아직 스와이프 이벤트가 발생하지 않았고, 좌에서 우로 스와이프 했을 때만 처리
+                    el.style.transform = `translateX(calc(40rem - ${el.offsetWidth}px))`;
+                    document.querySelector('.siso').classList.add('active');
+                    document.querySelector('.is-touch').classList.add('in');
+                    hasSwiped = true; // 스와이프가 발생했음을 기록
+                }
+                // 초기화
+                startX = 0;
+                endX = 0;
+            });
+        }
+        const targetNumber = 154185; 
+        const duration = 1500;
+        const interval = 20;
+        let currentNumber = 0; 
+
+        
+        const step = targetNumber / (duration / interval);
+
+        function updateCounter() {
+            currentNumber += step;
+            if (currentNumber >= targetNumber) {
+                currentNumber = targetNumber;
+                clearInterval(counterInterval);
+            }
+            document.querySelector('.count').textContent = Math.floor(currentNumber).toLocaleString('en-US');
+        }
+        const counterInterval = setInterval(updateCounter, interval);
+    
     })
 </script>
 </body></html>

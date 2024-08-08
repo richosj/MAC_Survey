@@ -67,7 +67,7 @@ function styles() {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sassCompiler().on('error', sassCompiler.logError))
-    .pipe(postCss([autoprefixer(), cssnano()]))
+    .pipe(postCss([autoprefixer()]))
     .pipe(rename('styles.css'))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.distCss))
@@ -76,9 +76,13 @@ function styles() {
 
 // Minified CSS task
 function minifyStyles() {
-  return gulp.src(`${paths.distCss}/styles.css`, { allowEmpty: true })
-    .pipe(cleanCss())
-    .pipe(rename({ suffix: '.min' }))
+  return gulp.src(`${paths.scss}/index.scss`, { allowEmpty: true })
+    .pipe(plumber())
+    .pipe(sourcemaps.init())
+    .pipe(sassCompiler().on('error', sassCompiler.logError))
+    .pipe(postCss([autoprefixer(), cssnano()]))
+    .pipe(rename('styles.min.css'))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.distCss));
 }
 
@@ -88,7 +92,7 @@ function cssReset() {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sassCompiler().on('error', sassCompiler.logError))
-    .pipe(postCss([autoprefixer(), cssnano()]))
+    .pipe(postCss([autoprefixer()]))
     .pipe(rename('reset.css'))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.distCss));
@@ -96,9 +100,13 @@ function cssReset() {
 
 // Minified CSS Reset task
 function minifyCssReset() {
-  return gulp.src(`${paths.distCss}/reset.css`, { allowEmpty: true })
-    .pipe(cleanCss())
-    .pipe(rename({ suffix: '.min' }))
+  return gulp.src(`${paths.scss}/reset.scss`, { allowEmpty: true })
+    .pipe(plumber())
+    .pipe(sourcemaps.init())
+    .pipe(sassCompiler().on('error', sassCompiler.logError))
+    .pipe(postCss([autoprefixer(), cssnano()]))
+    .pipe(rename('reset.min.css'))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.distCss));
 }
 
